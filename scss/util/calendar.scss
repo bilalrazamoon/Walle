@@ -1,0 +1,70 @@
+.k-calendar{
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: transparent;
+  .k-header{
+    display: none;
+  }
+  .k-content{
+    background-color: transparent;
+    th{
+      text-align: center;
+      padding-left: 8px;
+      background-color: transparent;
+    }
+    td{
+      box-shadow: none!important;
+      a.k-link{
+        position: relative;
+        width: 2em;
+        height: 2em;
+        display: block;
+        margin: auto;
+        border: 1px solid transparent;
+        border-radius: 50%;
+        min-height: 2em;
+        line-height: 2em;
+        font-size: 1em;
+        span{
+          width: 3px;
+          height: 3px;
+          border-radius: 50%;
+          background-color: #00b0ff;
+          position: absolute;
+          bottom: 2px;
+          left: 0;
+          right: 0;
+          margin: auto;
+        }
+      }
+      &.k-state-selected{
+        background-color: transparent;
+        a.k-link{
+          border-color: #aaaaaa;
+          color: #d5d5d5;
+          background-color: rgba(255, 255, 255, 0.10);
+          span{
+            background: none;
+          }
+        }
+      }
+      &:hover{
+        box-shadow: none!important;
+      }
+    }
+  }
+  .exhibition,.party,.cocktail {
+    font-weight: bold;
+  }
+  .exhibition {
+    color: #ff9e00;
+  }
+
+  .party {
+    color: #ff4081;
+  }
+
+  .cocktail {
+    color: #00a1e8;
+  }
+}

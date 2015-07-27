@@ -1,0 +1,71 @@
+.card-block{
+  position: relative;
+  width: 300px;
+  height: 150px;
+  margin: auto;
+  padding-top: 60px;
+  padding-left: 15px;
+  border-radius: 8px;
+  .logo{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    height: 40px;
+  }
+  .number{
+    margin: 5px 0;
+    font-family: 'OCRA-Extended';
+    font-size: 18px;
+    color: #fff;
+  }
+  span{
+    margin-top: 3px;
+    color: #fff;
+    line-height: 8px;
+    font-size: 8px;
+    position: absolute;
+    left: 15px;
+    font-weight: 500;
+    width: 35px;
+    display: block;
+    text-transform: uppercase;;
+  }
+  .valid{
+    margin: 5px 0;
+    padding-left: 30px;
+    color: #fff;
+    font-size: 16px;
+    font-family: 'OCRA-Extended';
+  }
+  .name{
+    margin: 5px 0;
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'OCRA-Extended';
+    font-size: 16px;
+  }
+  .circle{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 32px;
+    &:before{
+      content: '';
+      position: absolute;
+      right: 0;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      background-color: rgba(255,255,255,.8);
+    }
+    &:after{
+      content: '';
+      position: absolute;
+      left: 0;
+      border-radius: 50%;
+      width: 20px;
+      height: 20px;
+      background-color: rgba(255,255,255,0.8);
+    }
+  }
+}

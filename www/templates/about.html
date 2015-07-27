@@ -1,0 +1,27 @@
+<ion-view view-title="About Application" class="about">
+    <ion-header-bar class="bar-stable">
+        <button class="button button-icon ion-android-arrow-back" ng-click="$ionicHistory.goBack()"></button>
+        <div class="title">About Application</div>
+    </ion-header-bar>
+    <ion-content has-bouncing="false">
+        <div class="item item-avatar">
+            <img src="img/icon.png" alt="Qasidah Burdah"/>
+
+            <h2>{{app.name}}</h2>
+
+            <p>v {{app.version}}</p>
+        </div>
+        <div class="cont">
+            <h2>About</h2>
+
+            <p>{{app.desc}}</p>
+
+            <h2>Developer</h2>
+
+            <p>&copy; 2015 {{app.author}}</p>
+
+            <h2>Links</h2>
+            <a ng-click="openLink(val)" ng-repeat="(key,val) in app.social">{{key}}</a>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,61 @@
+.feedback {
+  background-color: #eeeeee;
+  .scroll-content{
+    padding: 16px;
+    background: none;
+    z-index: 10;
+    top:56px
+  }
+  .bar.bar-header{
+    height: 150px;
+    .title{
+      height: 150px;
+    }
+  }
+  .card {
+    max-width: 500px;
+    width: 100%;
+    padding: 24px;
+    margin: auto;
+    margin-top: 25px;
+    h2{
+      color: $primaryColor;
+      font-size: 2em;
+      font-family: Roboto-Regular;
+      margin-bottom: 16px;
+    }
+    .item{
+      border-top: 0;
+      border-bottom-width: 2px;
+      margin-bottom: 10px;
+      padding-left: 0;
+    }
+    .button{
+      margin: 1em 0;
+      background: none;
+      text-transform: uppercase;
+      font-family: Roboto-Regular;
+      font-weight: 500;
+      border: none;
+      box-shadow: none;
+      min-height: 40px;
+      border-radius: 3px;
+      color: rgba($ancentColor, 0.8);
+      &.activated{
+        background-color: rgba(76, 175, 80, 0.1);
+      }
+    }
+    .select{
+      margin: 14px 0;
+      padding: 5px 0;
+      border-bottom: 2px solid #ddd;
+      color: rgba($dark,0.5);
+      font-size: 16px;
+      font-family: Roboto-Regular;
+      .icon{
+        font-size: 16px;
+      }
+    }
+  }
+}
+

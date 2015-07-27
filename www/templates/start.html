@@ -1,0 +1,48 @@
+<ion-view class="slideBox">
+    <div class="slides">
+        <ion-slide-box on-slide-changed="slideChanged(index)" show-pager="true">
+            <ion-slide>
+                <h3 ng-bind="appName"></h3>
+
+                <div class="logo">
+                    <img src="img/logo.png">
+                </div>
+
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </ion-slide>
+            <ion-slide>
+                <h3>First slide</h3>
+
+                <div class="logo">
+                    <img src="img/slides/1.png">
+                </div>
+
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </ion-slide>
+            <ion-slide on-drag-left="onDragLeft()">
+                <h3>Second slide</h3>
+
+                <div class="logo">
+                    <img src="img/slides/2.png">
+                </div>
+
+                <p>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                </p>
+            </ion-slide>
+        </ion-slide-box>
+    </div>
+    <ion-footer-bar class="bar-light">
+        <button ng-if="isPre()" class="button button-clear button-icon" ng-click="previous()"><i
+                class="ion ion-chevron-left"></i> Previous
+        </button>
+        <button ng-if="!isPre()" class="button button-clear button-icon" ng-click="done()">Skip</button>
+        <button ng-if="isNext()" class="button button-clear button-icon" ng-click="next()">Next <i
+                class="ion ion-chevron-right"></i></button>
+        <button ng-if="!isNext()" class="button button-clear button-icon" ng-click="done()">Done</button>
+    </ion-footer-bar>
+</ion-view>

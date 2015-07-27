@@ -1,0 +1,16 @@
+.backDrop {
+  transform: translate3d(0px, 0px, 0px);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+  opacity: 0;
+  display: none;
+}
+
+.backDrop.active {
+  display: block;
+}

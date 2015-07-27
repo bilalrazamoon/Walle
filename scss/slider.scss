@@ -1,0 +1,46 @@
+.slideBox{
+  .slides{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 44px;
+    .slider {
+      margin: auto;
+      height: 375px;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      .slider-slide {
+        color: #000;
+        background-color: #fff;
+        text-align: center;
+        font-weight: 300;
+        h3{
+          color: #1B5E20;
+          font-size: 2em;
+          font-weight: 500;
+        }
+        p{
+          padding: 12px;
+          font-size: 18px;
+          font-weight: 300;
+          text-align: center;
+        }
+        .logo {
+          margin: 30px auto;
+          img{
+            width: 120px;
+          }
+        }
+      }
+    }
+  }
+  .bar.bar-footer{
+    button{
+      transition: none;
+    }
+  }
+}

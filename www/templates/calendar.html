@@ -1,0 +1,29 @@
+<ion-view view-title="">
+
+    <ion-nav-title ng-click="popover.show($event)">
+        {{getTitle()}} <i class='icon ion-android-arrow-dropdown'></i>
+    </ion-nav-title>
+    <ion-nav-buttons side="right">
+        <button class="button button-clear ion-plus" ng-click="today()"></button>
+    </ion-nav-buttons>
+    <ion-content class="black-ground">
+        <kendo-calendar ng-model="dateModel" k-options="options" on-swipe-left="onSwipeLeft()" on-swipe-right="onSwipeRight()">
+
+        </kendo-calendar>
+        <div class="item item-divider">
+            {{current}}
+        </div>
+        <div class="list-transactions">
+            <div class="item item-complex" ng-repeat="t in transactions | filter:filterFunc">
+                <div class="cat" ng-class="t.category.toLowerCase()">
+                    <i class="icon ion-star"></i>
+                </div>
+                <a class="item-content"  ui-sref="">
+                    <span class="item-note" ng-class="{'assertive':t.status=='loss','light':t.status=='profit'}" ng-bind="t.price | currency"></span>
+                    <h2 ng-bind="t.category"></h2>
+                    <p ng-bind="t.date"></p>
+                </a>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

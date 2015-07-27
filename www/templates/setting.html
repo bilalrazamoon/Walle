@@ -1,0 +1,28 @@
+<ion-view view-title="About Application" class="setting">
+    <ion-header-bar class="bar-stable">
+        <button class="button button-icon ion-android-arrow-back" ng-click="$ionicHistory.goBack()"></button>
+        <div class="title">Setting</div>
+    </ion-header-bar>
+    <ion-content class="black-ground">
+        <div class="list-setting">
+            <div class="item item-divider">General</div>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Currency
+                </div>
+                <select ng-options="i for i in currencies" ng-model="setting.currency"></select>
+            </label>
+            <ion-toggle toggle-class="toggle-light">
+                Sync data
+            </ion-toggle>
+            <div class="item item-divider">Security</div>
+            <ion-toggle toggle-class="toggle-light">
+                Password
+            </ion-toggle>
+            <ion-item>
+                Change password
+            </ion-item>
+            <!--<div class="item item-divider">Share the App</div>-->
+        </div>
+    </ion-content>
+</ion-view>

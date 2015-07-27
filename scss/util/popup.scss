@@ -1,0 +1,65 @@
+.popup-container {
+  padding: 32px;
+  .popup {
+    overflow: hidden;
+    min-width: 200px;
+    max-width: 350px;
+    margin: auto;
+    width: 100%;
+    box-shadow: 0px 27px 24px 0 rgba(0, 0, 0, 0.2);
+    background-color: #FFFFFF;
+    .popup-head {
+      border: none;
+      padding: 24px;
+      .popup-title {
+        text-align: left;
+        font-size: 20px;
+        font-family: Roboto-Medium;
+      }
+    }
+    .popup-body {
+      padding: 0 24px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      height: auto;
+      width: 100%;
+      * {
+        display: block;
+        margin: 12px 0;
+        font-size: 16px;
+        font-family: Roboto-Regular;
+      }
+    }
+    .popup-buttons {
+      padding: 16px;
+      text-align: right;
+      display: block;
+      .button {
+        width: auto;
+        flex: none;
+        display: inline-block;
+        margin: 4px 0;
+        background: none;
+        text-transform: uppercase;
+        font-family: Roboto-Regular;
+        font-weight: 500;
+        border: none;
+        border-radius: 3px;
+        box-shadow: none;
+        min-height: 30px;
+        color: rgba(0, 0, 0, 1);
+        &.button {
+          &.activated {
+            background-color: rgba(0, 0, 0, 0.1);
+          }
+        }
+        &.button-stable,&.button-positive {
+          color: rgba(76, 175, 80, 0.8);
+          &.activated {
+            background-color: rgba(76, 175, 80, 0.1);
+          }
+        }
+      }
+    }
+  }
+}

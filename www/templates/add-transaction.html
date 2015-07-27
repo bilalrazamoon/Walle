@@ -1,0 +1,25 @@
+<ion-modal-view>
+    <ion-header-bar class="bar-stable">
+        <button class="button button-icon ion-android-close" ng-click="modal.hide()"></button>
+        <h1 class="title">Add Transaction</h1>
+        <button class="button button-icon icon ion-android-done"></button>
+    </ion-header-bar>
+    <ion-content>
+        <div class="list-setting">
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Expense
+                </div>
+                <input type="text" ng-model="newTran.price"/>
+            </label>
+            <div class="item item-icon-right">
+                Category
+                <i class="icon ion-ios-arrow-right"></i>
+            </div>
+            <div class="item item-icon-right">
+                Category
+                <i class="icon ion-ios-arrow-right"></i>
+            </div>
+        </div>
+    </ion-content>
+</ion-modal-view>

@@ -1,0 +1,51 @@
+<ion-nav-bar class="bar-stable">
+    <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" ng-click="openDrawer()">
+        </button>
+    </ion-nav-buttons>
+</ion-nav-bar>
+<drawer side="left" class="drawer">
+    <div class="banner" style="background-image: url(img/banner.jpg)">
+      <div class="profile" style="background-image: url(img/avatar.jpg)"></div>
+    </div>
+    <ion-content has-bouncing="false">
+        <ion-list>
+            <div class="a">
+                <ion-item class="item-icon-left" drawer-close ui-sref="app.home" ui-sref-active="active">
+                    <i class="ion icon ion-star"></i>
+                    Transcations
+                </ion-item>
+                <ion-item class="item-icon-left" drawer-close ui-sref="app.cards" ui-sref-active="active">
+                    <i class="ion icon ion-star"></i>
+                    Cards
+                </ion-item>
+                <ion-item class="item-icon-left" drawer-close ui-sref="app.calendar" ui-sref-active="active">
+                    <i class="ion icon ion-star"></i>
+                    Calendar
+                </ion-item>
+            </div>
+            <hr/>
+            <div class="b">
+                <ion-item class="item-icon-left" drawer-close ng-click="shareApp()">
+                    <i class="ion icon ion-android-share-alt"></i>
+                    Share an App
+                </ion-item>
+                <ion-item class="item-icon-left" drawer-close  ng-click="rateApp()">
+                    <i class="ion icon ion-android-star"></i>
+                    Rate an App
+                </ion-item>
+                <ion-item class="item-icon-left" drawer-close ui-sref="setting" ui-sref-active="active">
+                    <i class="ion icon ion-gear-a"></i>
+                    Setting
+                </ion-item>
+                <ion-item class="item-icon-left" drawer-close ui-sref="about" ui-sref-active="active">
+                    <i class="ion icon ion-information-circled"></i>
+                    About
+                </ion-item>
+            </div>
+        </ion-list>
+    </ion-content>
+</drawer>
+<div class="backDrop" ng-click="closeDrawer()"></div>
+
+<ion-nav-view name="menuContent" drawerClose></ion-nav-view>

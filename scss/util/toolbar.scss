@@ -1,0 +1,75 @@
+.bar.bar-header {
+  background-color: $primaryColor;
+  background-image: none;
+  height: 56px;
+  border-color: transparent;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  padding: 0;
+  .title{
+    font-family: Roboto-Regular;
+    & + .button{
+      &:last-child{
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+      }
+    }
+  }
+  &.bar-light{
+    .title,.button.button-icon{
+      color: #444;
+    }
+  }
+  &.transparent{
+    background: none;
+    border: none;
+    box-shadow: none;
+  }
+  .title {
+    color: #f1f1f1;
+    height: 55px;
+    font-size: 1.5em;
+    line-height: 56px;
+    left: 60px!important;
+    text-align: left;
+  }
+  .buttons{
+    &.buttons-left{
+      top: 0;
+      left: 0;
+      height: 100%;
+      position: absolute;
+    }
+    &.buttons-right{
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+    }
+  }
+  .button{
+    min-height: 56px;
+    transition: none;
+    &.activated{
+      opacity:1;
+      color: #ffffff;
+      background-color: rgba(255,255,255,0.1);
+    }
+    &.button-icon {
+      border: 0;
+      height: 56px;
+      padding-left: 15px;
+      padding-right: 15px;
+      line-height: 0;
+      color: #f1f1f1;
+    }
+  }
+}
+.has-header {
+  top: 56px;
+}
+.transparent-bar .bar.bar-header{
+  background-color:transparent!important;
+  box-shadow: none;
+}

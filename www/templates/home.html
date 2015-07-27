@@ -1,0 +1,24 @@
+<ion-view view-title="" class="home">
+  <ion-nav-title ng-click="popover.show($event)">
+{{option}} <i class='icon ion-android-arrow-dropdown'></i>
+  </ion-nav-title>
+  <ion-content has-bouncing="false" fab-scroll-container>
+    <div class="list-transactions">
+      <div class="item item-divider">
+        Today, 23<sup>rd</sup> November
+      </div>
+      <div class="item item-complex" ng-repeat="t in transactions">
+        <div class="cat" ng-class="t.category.toLowerCase()">
+          <i class="icon ion-star"></i>
+        </div>
+        <a class="item-content"  ui-sref="">
+        <span class="item-note" ng-class="{'assertive':t.status=='loss','light':t.status=='profit'}" ng-bind="t.price | currency"></span>
+        <h2 ng-bind="t.category"></h2>
+      </a>
+    </div>
+    </div>
+  </ion-content>
+  <fab ng-click="addTransaction()">
+    <i class="icon ion-plus"></i>
+  </fab>
+</ion-view>
