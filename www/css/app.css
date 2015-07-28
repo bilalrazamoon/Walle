@@ -7638,7 +7638,7 @@ a.button {
       color: #fff;
       line-height: 40px; }
   .list-transactions .item .item-content {
-    border-width: 2px 0 0;
+    border-width: 0 0 2px;
     border-color: #545460;
     border-style: solid;
     padding: 18px;
@@ -7725,6 +7725,27 @@ a.button {
       color: #ffffff;
       font-size: 10px;
       margin: 0; }
+
+hr {
+  border-color: #545460;
+  border-width: 1px 0 0 0px;
+  border-style: solid; }
+
+.center-block {
+  min-height: 100px;
+  position: absolute;
+  height: 100%;
+  width: 100%; }
+  .center-block div {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    color: #FFFFFF;
+    margin: auto;
+    display: inline-block;
+    text-align: center; }
 
 .card-block {
   position: relative;
@@ -7960,6 +7981,10 @@ a.button {
 
 .k-calendar {
   width: 100%;
+  max-width: 600px;
+  margin: auto;
+  display: block;
+  border: none;
   font-family: Arial, Helvetica, sans-serif;
   background-color: transparent; }
   .k-calendar .k-header {
