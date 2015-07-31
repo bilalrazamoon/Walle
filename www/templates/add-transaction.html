@@ -1,15 +1,16 @@
-<ion-modal-view>
+<ion-modal-view class="add-transaction">
     <ion-header-bar class="bar-stable">
         <button class="button button-icon ion-android-close" ng-click="modal.hide()"></button>
         <h1 class="title">Add Transaction</h1>
         <button class="button button-icon icon ion-android-done"></button>
     </ion-header-bar>
-    <ion-content>
+    <ion-content class="black-ground">
         <div class="list-setting">
-            <label class="item item-input item-select">
+            <label class="item item-icon-left item-input item-select">
                 <div class="input-label">
-                    Expense
+                    Expenses
                 </div>
+                <i class="icon ion-cash"></i>
                 <input type="text" ng-model="newTran.price"/>
             </label>
             <div class="item item-icon-right">
@@ -17,7 +18,12 @@
                 <i class="icon ion-ios-arrow-right"></i>
             </div>
             <div class="item item-icon-right">
-                Category
+                Credit Card
+                <i class="icon ion-ios-arrow-right"></i>
+            </div>
+            <div class="item item-icon-right">
+                Date
+                <span class="item-note"></span>
                 <i class="icon ion-ios-arrow-right"></i>
             </div>
         </div>

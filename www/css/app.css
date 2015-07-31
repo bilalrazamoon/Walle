@@ -7710,11 +7710,6 @@ a.button {
           top: 0;
           margin: auto; }
 
-.add-card .slider .slider-slide {
-  padding: 0; }
-.add-card .card-block {
-  margin: 15px auto; }
-
 .slider {
   padding: 10px; }
   .slider .slider-slide {
@@ -8153,6 +8148,14 @@ drawer {
         height: 1px;
         margin: 10px 0; }
 
+.add-card .slider .slider-slide {
+  padding: 0; }
+.add-card .card-block {
+  margin: 15px auto; }
+
+.add-transactions .list .item.item-icon-left {
+  padding-left: 54px; }
+
 .cards .no-slides {
   position: relative;
   min-height: 190px; }
@@ -8169,8 +8172,7 @@ drawer {
     height: 18px; }
 
 .about .scroll-content {
-  padding-top: 5px;
-  background-color: #eeeeee; }
+  padding-top: 5px; }
   .about .scroll-content .item {
     background-color: transparent;
     border: none;
@@ -8182,23 +8184,26 @@ drawer {
     .about .scroll-content .item h2 {
       font-family: Roboto-Medium;
       opacity: 0.85;
+      color: #ffffff;
       font-size: 18px;
       margin-bottom: 4px; }
     .about .scroll-content .item p {
       font-family: Roboto-Regular;
-      font-size: 16px; }
+      font-size: 16px;
+      color: #ffffff; }
 .about .cont {
   padding: 16px;
   padding-top: 0; }
   .about .cont h2 {
     font-family: Roboto-Medium;
-    color: #2e2e3b;
+    color: #ffffff;
+    opacity: 0.8;
     font-size: 16px;
     margin: 16px 0; }
   .about .cont p, .about .cont a {
     font-family: Roboto-Regular;
     opacity: 0.90;
-    color: #000;
+    color: #ffffff;
     font-size: 16px; }
   .about .cont a {
     display: block;
