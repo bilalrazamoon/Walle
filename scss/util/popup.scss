@@ -1,3 +1,65 @@
+@-webkit-keyframes rotateIn {
+  0% {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: rotate3d(0, 0, 1, -200deg);
+    transform: rotate3d(0, 0, 1, -200deg);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes rotateIn {
+  0% {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: rotate3d(0, 0, 1, -200deg);
+    transform: rotate3d(0, 0, 1, -200deg);
+    opacity: 0;
+  }
+
+  100% {
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-transform: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    -webkit-transform: scale3d(.3, .3, .3);
+    transform: scale3d(.3, .3, .3);
+  }
+  100% {
+    opacity: 1;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+  }
+}
+
 .popup-container {
   padding: 32px;
   .popup {
@@ -7,13 +69,14 @@
     margin: auto;
     width: 100%;
     box-shadow: 0px 27px 24px 0 rgba(0, 0, 0, 0.2);
-    background-color: #FFFFFF;
+    background-color: $primaryColor;
     .popup-head {
       border: none;
       padding: 24px;
       .popup-title {
         text-align: left;
         font-size: 20px;
+        color: rgba(#fff, 0.9);
         font-family: Roboto-Medium;
       }
     }
@@ -23,11 +86,51 @@
       overflow-x: hidden;
       height: auto;
       width: 100%;
-      * {
+      .abc {
         display: block;
         margin: 12px 0;
         font-size: 16px;
         font-family: Roboto-Regular;
+      }
+      .list {
+        .item {
+          padding-left: 50px;
+          font-family: Roboto-Regular;
+          border: none;
+          background-color: $primaryColor;
+          color: #fff;
+          &.activated {
+            background-color: rgba(#fff, 0.1);
+          }
+          &.active{
+            background-color: rgba(#fff, 0.2);
+          }
+          .cat {
+            border-radius: 50%;
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            left: 10px;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            background-color: #8254ff;
+            text-align: center;
+            .icon{
+              font-size: 16px;
+              line-height: 30px;
+            }
+            .ion-checkmark{
+              font-size: 18px;
+              -webkit-animation-fill-mode: both;
+              animation-fill-mode: both;
+              -webkit-animation-name: bounceIn;
+              animation-name: bounceIn;
+              -webkit-animation-duration: 1s;
+              animation-duration: 1s;
+            }
+          }
+        }
       }
     }
     .popup-buttons {
@@ -44,19 +147,19 @@
         font-family: Roboto-Regular;
         font-weight: 500;
         border: none;
-        border-radius: 3px;
+        border-radius: 5px;
         box-shadow: none;
         min-height: 30px;
-        color: rgba(0, 0, 0, 1);
+        color: rgba(#fff, 0.9);
         &.button {
           &.activated {
-            background-color: rgba(0, 0, 0, 0.1);
+            background-color: rgba(#fff, 0.1);
           }
         }
-        &.button-stable,&.button-positive {
-          color: rgba(76, 175, 80, 0.8);
+        &.button-stable, &.button-positive {
+          color: rgba($ancentColor, 0.8);
           &.activated {
-            background-color: rgba(76, 175, 80, 0.1);
+            background-color: rgba(#fff, 0.1);
           }
         }
       }

@@ -75,6 +75,16 @@
       font-weight: 300;
       color: rgba(255, 255, 255, 0.4)
     }
+    &.item-icon-left.item-input{
+      padding-left: 54px;
+    }
+    input[type=date]{
+      visibility: hidden;
+      width: 0;
+      height: 0;
+      margin: 0;
+      padding: 0;
+    }
     &.item-input, &.item-select {
       padding: 8px 16px;
       .input-label {
@@ -89,6 +99,7 @@
         color: #999;
       }
       input {
+        padding: 0;
         text-align: right;
         font-size: 1em;
         background-color: transparent;

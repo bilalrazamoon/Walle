@@ -2,30 +2,33 @@
     <ion-header-bar class="bar-stable">
         <button class="button button-icon ion-android-close" ng-click="modal.hide()"></button>
         <h1 class="title">Add Transaction</h1>
-        <button class="button button-icon icon ion-android-done"></button>
+        <button class="button button-icon icon ion-android-done" ng-click="addTran()"></button>
     </ion-header-bar>
     <ion-content class="black-ground">
         <div class="list-setting">
-            <label class="item item-icon-left item-input item-select">
-                <div class="input-label">
-                    Expenses
-                </div>
+            <label class="item item-icon-left item-input">
+                Expenses
                 <i class="icon ion-cash"></i>
-                <input type="text" ng-model="newTran.price"/>
+                <input type="number" ng-model="newTran.price"/>
             </label>
-            <div class="item item-icon-right">
+            <div class="item item-icon-left item-icon-right" ng-click="showCat()">
+                <i class="icon ion-pricetag"></i>
                 Category
+                <span class="item-note">{{getCat(newTran.cat)}}</span>
                 <i class="icon ion-ios-arrow-right"></i>
             </div>
-            <div class="item item-icon-right">
-                Credit Card
+            <div class="item item-icon-left item-icon-right">
+                <i class="icon ion-card"></i>
+                Card
                 <i class="icon ion-ios-arrow-right"></i>
             </div>
-            <div class="item item-icon-right">
+            <label class="item item-icon-left item-icon-right">
+                <i class="icon ion-android-calendar"></i>
                 Date
-                <span class="item-note"></span>
+                <span class="item-note">{{newTran.date | date:'d MMM, yyyy'}}</span>
+                <input type="date" ng-model="newTran.date"/>
                 <i class="icon ion-ios-arrow-right"></i>
-            </div>
+            </label>
         </div>
     </ion-content>
 </ion-modal-view>

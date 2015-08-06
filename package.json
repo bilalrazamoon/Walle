@@ -27,11 +27,6 @@
     "https://github.com/loicknuchel/cordova-device-accounts.git"
   ],
   "cordovaPlatforms": [
-    {
-      "platform": "android",
-      "version": "3.6.4",
-      "locator": "android"
-    },
     "android"
   ]
 }
