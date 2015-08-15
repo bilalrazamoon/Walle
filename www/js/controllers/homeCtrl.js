@@ -1,5 +1,5 @@
 angular.module('app')
-    .controller('homeCtrl', function ($app, $scope, $ionicPopover, $ionicModal, $ionicPopup, $categories, $transactions, $cards, $colors) {
+    .controller('homeCtrl', function ($app, $scope, $ionicPopover, $ionicModal, $ionicPopup, $categories, $transactions, $cards, $colors, $timeout, $ionicListDelegate) {
         var home = this;
         $scope.categories = $categories.get();
         //$scope.getColors = $colors.get;
@@ -85,5 +85,21 @@ angular.module('app')
             if(!$scope.IsCat(c.id))
                 obj[c.icon]=true;
             return obj
-        }
+        };
+        /*$scope.deleteCard= function (e, t) {
+            //console.log(angular.element(e.target).parent().find('.item-options').hasClass('invisible'));
+            /!*if((angular.element(e.target).parent().css('transform')!='none')){
+                $transactions.remove(t);
+                $scope.transactions=$transactions.get();
+                $scope.transactions=$transactions.get();
+
+            }*!/
+            $timeout(function () {
+                if(angular.element(e.target).parent().css('transform')!='none'){
+                    $transactions.remove(t);
+                    $scope.transactions=$transactions.get();
+                    $ionicListDelegate.$getByHandle('list-transactions').closeOptionButtons();
+                }
+            },400)
+        }*/
     });

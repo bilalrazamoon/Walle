@@ -67,7 +67,7 @@ angular.module('app')
                     if(v.no==no){
                         cards.splice(i,1)
                     }
-                })
+                });
                 localStorage.setItem('cards', JSON.stringify(cards));
             }
         }

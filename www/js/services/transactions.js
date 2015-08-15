@@ -52,6 +52,15 @@ angular.module('app')
                     transactions.push(arg);
                     localStorage.setItem('transactions', JSON.stringify(transactions));
                 }
+            },
+            remove: function (obj) {
+                var transactions = JSON.parse(localStorage.getItem('transactions'));
+                transactions.forEach(function (v,i) {
+                    if(v.date==obj.date){
+                        transactions.splice(i,1)
+                    }
+                });
+                localStorage.setItem('transactions', JSON.stringify(transactions));
             }
         }
     });

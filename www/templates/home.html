@@ -3,24 +3,19 @@
   {{option}} <i class='icon ion-android-arrow-dropdown'></i>
     </ion-nav-title>-->
     <ion-content has-bouncing="false" class="black-ground" fab-scroll-container>
-        <div class="list-transactions">
-          <ion-item class="item" ng-repeat="t in transactions | filter:date">
-              <div class="cat" cat-color="t.cat.color">
-                  <i class="icon" ng-class="t.cat.icon"></i>
-              </div>
-              <h2>{{t.cat.val}}</h2>
-              <span class="item-note" check-loss="t.price">{{t.price | currency}}</span>
-              <p>{{t.date | date:"MM/dd/yy 'at' h:mma"}}</p>
-            <ion-option-button class="button-assertive">
-              <i class="icon ion-trash-b"></i>
-            </ion-option-button>
-            <ion-option-button class="button-assertive">Edit</ion-option-button>
-          </ion-item>
-        </div>
-        <div class="no-items" style="top:0;bottom: 0" ng-if="transactions.length==0">
-            <i class="icon ion-android-alert"></i>
-            <p>No Transactions</p>
-        </div>
+        <ion-list class="list-transactions" delegate-handle="list-transactions">
+            <ion-item class="item" ng-repeat="t in transactions | filter:date" on-drag-end="deleteCard($event, t)" style="background-color: #de473d">
+                <div class="cat" cat-color="t.cat.color">
+                    <i class="icon" ng-class="t.cat.icon"></i>
+                </div>
+                <h2>{{t.cat.val}}</h2>
+                <span class="item-note" check-loss="t.price">{{t.price | currency}}</span>
+                <p>{{t.date | date:"MM/dd/yy 'at' h:mma"}}</p>
+                <ion-option-button class="button-assertive">
+                    <i class="icon ion-android-delete"></i>
+                </ion-option-button>
+            </ion-item>
+        </ion-list>
     </ion-content>
     <fab ng-click="addTransaction()" live-displace="true">
         <i class="icon ion-plus"></i>

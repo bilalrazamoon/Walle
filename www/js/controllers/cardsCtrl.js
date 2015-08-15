@@ -1,5 +1,5 @@
 angular.module('app')
-    .controller('cardsCtrl', function ($app, $scope, $ionicPopover, $ionicModal, $colors, $cards, $transactions, $ionicSlideBoxDelegate, $ionicPopup, $timeout) {
+    .controller('cardsCtrl', function ($app, $scope, $ionicPopover, $ionicModal, $colors, $cards, $transactions, $ionicSlideBoxDelegate, $ionicPopup, $ionicListDelegate, $timeout) {
         $scope.colors = $colors.get();
         $scope.cards = $cards.get();
         $scope.getColors = $colors.get;

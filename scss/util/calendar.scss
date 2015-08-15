@@ -16,6 +16,7 @@
       background-color: transparent;
     }
     td{
+      background: none!important;
       box-shadow: none!important;
       a.k-link{
         position: relative;
@@ -32,7 +33,7 @@
           width: 3px;
           height: 3px;
           border-radius: 50%;
-          background-color: #00b0ff;
+          background-color: $ancentColor;
           position: absolute;
           bottom: 2px;
           left: 0;

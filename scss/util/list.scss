@@ -1,6 +1,6 @@
 .list-transactions {
   .item {
-    background-color: #353543;
+    background-color: $primaryColorLight;
     padding: 0;
     border: none;
     &.activated, &.active {
@@ -33,7 +33,7 @@
     .item-content {
       padding: 16px;
       padding-left: 74px;
-      background-color: transparent;
+      background-color: $primaryColorLight;
       &.activated, &.active {
         background-color: rgba(255,255,255,0.1);
       }
@@ -231,9 +231,9 @@ hr{
   @include justify-content(center);
 }
 
-.scroll{
+/*.scroll{
   height: 100%;
-}
+}*/
 
 .no-items{
   display: block;

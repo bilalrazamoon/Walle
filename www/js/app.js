@@ -1,4 +1,9 @@
-angular.module('app', ['ionic', 'ngCordova', 'ui.mask', 'kendo.directives'])
+angular.module('app', [
+    'ionic',
+    'ngCordova',
+    //'ui.mask',
+    'kendo.directives'
+])
     .constant('$app', {
         name: "Walle",
         version: "1.0",
