@@ -1,7 +1,7 @@
 <ion-list>
-    <ion-item ng-repeat="c in categories" ng-class="{'active':IsCat(c.id)}" ng-click="selectCat(c.id)">
-        <div class="cat" ng-style="{'background-color':c.color}">
-            <i class="icon" ng-class="{'ion-star':!IsCat(c.id),'ion-checkmark':IsCat(c.id)}"></i>
+    <ion-item class="item-cat" ng-repeat="c in categories" ng-class="{'active':IsCat(c.id)}" ng-click="selectCat(c.id)">
+        <div class="cat" cat-color="c.color">
+            <i class="icon " ng-class="getClass(c)"></i>
         </div>
         {{c.val}}
     </ion-item>

@@ -1,27 +1,33 @@
-<ion-view view-title="">
+<ion-view view-title="Calendar <i class='icon ion-android-arrow-dropdown'></i>">
 
-    <ion-nav-title ng-click="popover.show($event)">
+    <!--<ion-nav-title ng-click="popover.show($event)">
         {{getTitle()}} <i class='icon ion-android-arrow-dropdown'></i>
-    </ion-nav-title>
+    </ion-nav-title>-->
     <ion-nav-buttons side="right">
         <button class="button button-clear ion-plus" ng-click="today()"></button>
     </ion-nav-buttons>
     <ion-content class="black-ground">
-        <kendo-calendar ng-model="dateModel" k-options="options" on-swipe-left="onSwipeLeft()" on-swipe-right="onSwipeRight()"></kendo-calendar>
+        <kendo-calendar ng-model="dateModel" k-options="options" on-swipe-left="onSwipeLeft()"
+                        on-swipe-right="onSwipeRight()"></kendo-calendar>
         <hr/>
-        <div class="center-block" style="top: 229px;" ng-if="filteredTransactions.length==0">
-            <div>No transactions.</div>
+        <div class="no-items" ng-if="filteredTransactions.length==0" style="top: 220px;">
+            <i class="icon ion-android-alert"></i>
+
+            <p>No Transactions</p>
         </div>
         <div class="list-transactions">
-            <div class="item item-complex" ng-repeat="t in filteredTransactions">
-                <div class="cat" ng-class="t.category.toLowerCase()">
-                    <i class="icon ion-star"></i>
+            <ion-item class="item" ng-repeat="t in filteredTransactions | filter:date">
+                <div class="cat" cat-color="t.cat.color">
+                    <i class="icon" ng-class="t.cat.icon"></i>
                 </div>
-                <a class="item-content">
-                    <span class="item-note" ng-class="{'assertive':t.status=='loss','light':t.status=='profit'}" ng-bind="t.price | currency"></span>
-                    <h2 ng-bind="t.category"></h2>
-                </a>
-            </div>
+                <h2>{{t.cat.val}}</h2>
+                <span class="item-note" check-loss="t.price">{{t.price | currency}}</span>
+                <p>{{t.date | date:"MM/dd/yy 'at' h:mma"}}</p>
+              <ion-option-button class="button-assertive">
+                <i class="icon ion-trash-b"></i>
+              </ion-option-button>
+              <ion-option-button class="button-assertive">Edit</ion-option-button>
+            </ion-item>
         </div>
     </ion-content>
 </ion-view>

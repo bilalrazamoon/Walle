@@ -26,12 +26,19 @@ $primaryColorDark: #25252f;
 $primaryColorLight: #353543;
 $ancentColor: #8254ff;
 
+@import "util/fonts";
+body{
+  font-family: Roboto,sans-serif;
+}
+
 /*imports*/
 @import
 "util",
+"slider",
 "drawer",
 "add-card",
 "add-transaction",
 "home",
 "cards",
-"about";
+"about",
+"profile";

@@ -1,4 +1,6 @@
 .slideBox{
+  background-color: $primaryColor;
+  transition: all 0.3s ease-in 0s;
   .slides{
     position: absolute;
     left: 0;
@@ -7,40 +9,73 @@
     bottom: 44px;
     .slider {
       margin: auto;
-      height: 375px;
       position: absolute;
       left: 0;
       right: 0;
       top: 0;
       bottom: 0;
       .slider-slide {
-        color: #000;
-        background-color: #fff;
-        text-align: center;
-        font-weight: 300;
-        h3{
-          color: #1B5E20;
-          font-size: 2em;
-          font-weight: 500;
-        }
-        p{
-          padding: 12px;
-          font-size: 18px;
-          font-weight: 300;
+        .content-block{
           text-align: center;
-        }
-        .logo {
-          margin: 30px auto;
-          img{
-            width: 120px;
+          position: absolute;
+          left: 0;
+          margin: auto;
+          right: 0;
+          bottom: 0;
+          top: 0;
+          display: table;
+
+          h3{
+            color: #fff;
+            font-size: 2em;
+            font-weight: 500;
+          }
+          p{
+            margin: 0;
+            padding: 12px;
+            font-size: 1.4em;
+            line-height: 1.4em;
+            font-weight: 300;
+            text-align: center;
+            color: #ffffff;
+          }
+          .logo {
+            margin: 30px auto;
+            img{
+              width: 120px;
+            }
           }
         }
+      }
+      .slider-pager{
+        position: fixed;
+        bottom: 14px;
+        left: 0;
+        right: 0;
       }
     }
   }
   .bar.bar-footer{
+    border-top: 1px solid rgba(255,255,255,0.5);
+    background-color: transparent;
+    padding: 1em;
     button{
+      font-size: 1.4em;
+      font-weight: 400;
+      color: #ffffff;
       transition: none;
+      &:first-child{
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        bottom: 5px;
+      }
+      &:last-child{
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        bottom: 5px;
+      }
     }
   }
 }

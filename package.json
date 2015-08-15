@@ -24,7 +24,9 @@
     "https://github.com/apache/cordova-plugin-console.git",
     "https://github.com/driftyco/ionic-plugins-keyboard.git",
     "https://github.com/EddyVerbruggen/SocialSharing-PhoneGap-Plugin",
-    "https://github.com/loicknuchel/cordova-device-accounts.git"
+    "https://github.com/loicknuchel/cordova-device-accounts.git",
+    "cordova-plugin-splashscreen",
+    "nl.x-services.plugins.socialsharing"
   ],
   "cordovaPlatforms": [
     "android"

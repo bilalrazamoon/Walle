@@ -3,35 +3,24 @@
         <div class="no-slides" ng-if="cards.length==0">
             <span>No Cards</span>
         </div>
-        <ion-slide-box on-slide-changed="slideHasChanged($index)" ng-if="cards.length!=0">
+        <ion-slide-box on-slide-changed="cardChanged($index)" ng-if="cards.length!=0">
             <ion-slide ng-repeat="c in cards">
-                <div class="card-block" style="background-color: {{getColors(c.color)}}">
-                    <img class="logo" src="img/logos/citi.png"/>
-
-                    <div class="number">{{c.no | cardNo}}</div>
-                    <span>Valid Thru</span>
-
-                    <div class="valid">
-                        {{c.valid.m}}/{{c.valid.y}}
-                    </div>
-                    <div class="name">{{c.name}}</div>
-                    <div class="circle"></div>
-                </div>
+                <card color="c.color" type="c.type" name="c.name" valid="c.valid" bank="c.bank" number="c.no" on-hold="more()"></card>
             </ion-slide>
         </ion-slide-box>
-        <div class="list-transactions">
-            <div class="item item-divider">
-                Today, 23<sup>rd</sup> November
-            </div>
-            <div class="item item-complex" ng-repeat="t in transactions">
-                <div class="cat" ng-class="t.category.toLowerCase()">
-                    <i class="icon ion-star"></i>
-                </div>
-                <a class="item-content"  ui-sref="">
-                    <span class="item-note" ng-class="{'assertive':t.status=='loss','light':t.status=='profit'}" ng-bind="t.price | currency"></span>
-                    <h2 ng-bind="t.category"></h2>
-                </a>
-            </div>
+        <div class="list-transactions" ng-if="cards.length!=0">
+              <ion-item class="item" ng-repeat="t in filteredTransactions | filter:date">
+                  <div class="cat" cat-color="t.cat.color">
+                      <i class="icon" ng-class="t.cat.icon"></i>
+                  </div>
+                  <h2>{{t.cat.val}}</h2>
+                  <span class="item-note" check-loss="t.price">{{t.price | currency}}</span>
+                  <p>{{t.date | date:"MM/dd/yy 'at' h:mma"}}</p>
+                <ion-option-button class="button-assertive">
+                  <i class="icon ion-trash-b"></i>
+                </ion-option-button>
+                <ion-option-button class="button-assertive">Edit</ion-option-button>
+              </ion-item>
         </div>
     </ion-content>
     <fab ng-click="addCard()">

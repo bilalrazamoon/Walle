@@ -1,24 +1,28 @@
-<ion-view view-title="" class="home">
-  <ion-nav-title ng-click="popover.show($event)">
-{{option}} <i class='icon ion-android-arrow-dropdown'></i>
-  </ion-nav-title>
-  <ion-content has-bouncing="false" fab-scroll-container>
-    <div class="list-transactions">
-      <div class="item item-divider">
-        Today, 23<sup>rd</sup> November
-      </div>
-      <div class="item item-complex" ng-repeat="t in transactions">
-        <div class="cat" ng-class="t.category.toLowerCase()">
-          <i class="icon ion-star"></i>
+<ion-view view-title="All Transactions" class="home">
+    <!--<ion-nav-title ng-click="popover.show($event)">
+  {{option}} <i class='icon ion-android-arrow-dropdown'></i>
+    </ion-nav-title>-->
+    <ion-content has-bouncing="false" class="black-ground" fab-scroll-container>
+        <div class="list-transactions">
+          <ion-item class="item" ng-repeat="t in transactions | filter:date">
+              <div class="cat" cat-color="t.cat.color">
+                  <i class="icon" ng-class="t.cat.icon"></i>
+              </div>
+              <h2>{{t.cat.val}}</h2>
+              <span class="item-note" check-loss="t.price">{{t.price | currency}}</span>
+              <p>{{t.date | date:"MM/dd/yy 'at' h:mma"}}</p>
+            <ion-option-button class="button-assertive">
+              <i class="icon ion-trash-b"></i>
+            </ion-option-button>
+            <ion-option-button class="button-assertive">Edit</ion-option-button>
+          </ion-item>
         </div>
-        <a class="item-content"  ui-sref="">
-        <span class="item-note" ng-class="{'assertive':t.status=='loss','light':t.status=='profit'}" ng-bind="t.price | currency"></span>
-        <h2 ng-bind="t.category"></h2>
-      </a>
-    </div>
-    </div>
-  </ion-content>
-  <fab ng-click="addTransaction()">
-    <i class="icon ion-plus"></i>
-  </fab>
+        <div class="no-items" style="top:0;bottom: 0" ng-if="transactions.length==0">
+            <i class="icon ion-android-alert"></i>
+            <p>No Transactions</p>
+        </div>
+    </ion-content>
+    <fab ng-click="addTransaction()" live-displace="true">
+        <i class="icon ion-plus"></i>
+    </fab>
 </ion-view>

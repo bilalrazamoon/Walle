@@ -1,8 +1,20 @@
 angular.module('app')
-    .factory('$cards', function () {
+    .factory('$cards', function ($colors) {
         return {
-            get: function (id) {
-                if (id) {
+            check: function (no) {
+                var cards = [];
+                if (localStorage.getItem('cards') == null) {
+                    return false
+                }
+                else{
+                    cards = JSON.parse(localStorage.getItem('cards'));
+                    return cards.filter(function (v) {
+                        return v.no==no;
+                    }).length!=0
+                }
+            },
+            get: function (no) {
+                if (no) {
                     var cards = [];
                     if (localStorage.getItem('cards') == null) {
                         localStorage.setItem('cards', JSON.stringify(cards));
@@ -11,7 +23,7 @@ angular.module('app')
                         cards = JSON.parse(localStorage.getItem('cards'));
                     }
                     return cards.filter(function (v) {
-                        return v.id == id
+                        return v.no == no
                     });
                 }
                 else {
@@ -21,6 +33,10 @@ angular.module('app')
                     }
                     else {
                         cards = JSON.parse(localStorage.getItem('cards'));
+                        cards = cards.map(function (v) {
+                            v.color=$colors.get(v.color);
+                            return v
+                        })
                     }
                     return cards;
                 }
@@ -44,6 +60,15 @@ angular.module('app')
                     cards.unshift(arg);
                     localStorage.setItem('cards', JSON.stringify(cards));
                 }
+            },
+            remove: function (no) {
+                var cards = JSON.parse(localStorage.getItem('cards'));
+                cards.forEach(function (v,i) {
+                    if(v.no==no){
+                        cards.splice(i,1)
+                    }
+                })
+                localStorage.setItem('cards', JSON.stringify(cards));
             }
         }
     });

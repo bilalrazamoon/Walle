@@ -18,7 +18,7 @@ angular.module('app', ['ionic', 'ngCordova', 'ui.mask', 'kendo.directives'])
     })
     .run(['$ionicPlatform', '$rootScope', '$state', '$ionicHistory', '$app', function ($ionicPlatform, $rootScope, $state, $ionicHistory, $app) {
         $rootScope.appName = $app.name;
-        $rootScope.$ionicHistory=$ionicHistory;
+        $rootScope.$ionicHistory = $ionicHistory;
         $ionicPlatform.ready(function () {
             // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
             // for form inputs)
@@ -30,12 +30,19 @@ angular.module('app', ['ionic', 'ngCordova', 'ui.mask', 'kendo.directives'])
                 StatusBar.backgroundColorByHexString($app.primaryColorDark);
             }
         });
+        //stateChangeStartEvent
         $rootScope.$on('$stateChangeStart',
             function (event, toState, toParams, fromState, fromParams) {
-                //stateChangeStartEvent
+                if (toState.name == "app.home" && localStorage.getItem('start')==null) {
+                    event.preventDefault();
+                    $state.go('start');
+                }
             });
         //helperFunctions
         $rootScope.shareApp = function () {
+            $SocialSharing.share($app.shareDesc, $app.shareTitle, null, 'https://play.google.com/store/apps/details?id=' + $app.id)
+        };
+        $rootScope.feedback = function () {
             $SocialSharing.share($app.shareDesc, $app.shareTitle, null, 'https://play.google.com/store/apps/details?id=' + $app.id)
         };
         $rootScope.openLink = function (link) {
@@ -88,6 +95,15 @@ angular.module('app', ['ionic', 'ngCordova', 'ui.mask', 'kendo.directives'])
                     'menuContent': {
                         templateUrl: "templates/calendar.html",
                         controller: 'calendarCtrl'
+                    }
+                }
+            })
+            .state('app.profile', {
+                url: "/profile",
+                views: {
+                    'menuContent': {
+                        templateUrl: "templates/profile.html",
+                        controller: "profileCtrl"
                     }
                 }
             })

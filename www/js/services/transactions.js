@@ -1,5 +1,5 @@
 angular.module('app')
-    .factory('$transactions', function () {
+    .factory('$transactions', function ($categories) {
         return {
             get: function (id) {
                 if (id) {
@@ -9,6 +9,10 @@ angular.module('app')
                     }
                     else {
                         transactions = JSON.parse(localStorage.getItem('transactions'));
+                        transactions=transactions.map(function (v) {
+                            v.cat=$categories.get(v.cat);
+                            return v
+                        })
                     }
                     return transactions.filter(function (v) {
                         return v.id == id
@@ -21,6 +25,10 @@ angular.module('app')
                     }
                     else {
                         transactions = JSON.parse(localStorage.getItem('transactions'));
+                        transactions=transactions.map(function (v) {
+                            v.cat=$categories.get(v.cat);
+                            return v
+                        })
                     }
                     return transactions;
                 }

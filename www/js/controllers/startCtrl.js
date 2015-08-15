@@ -1,9 +1,8 @@
 angular.module('app')
     .controller('startCtrl', function ($scope, $state, $ionicSlideBoxDelegate, $ionicPlatform, $app) {
-        var start = this;
-        start.appName=$app.name;
         $ionicPlatform.ready(function () {
-            if(window.StatusBar.backgroundColorByHexString) StatusBar.backgroundColorByHexString($app.primaryColor);
+            if(window.StatusBar)
+                StatusBar.backgroundColorByHexString($app.primaryColor);
         });
         $scope.slideChanged = function (i) {
             console.log(i)
@@ -27,4 +26,18 @@ angular.module('app')
         $scope.onDragLeft = function () {
             $scope.done()
         };
+        $scope.getColor= function () {
+            if($ionicSlideBoxDelegate.currentIndex()==0){
+                return '#42a190'
+            }
+            else if($ionicSlideBoxDelegate.currentIndex()==1){
+                return '#63a3b4'
+            }
+            else if($ionicSlideBoxDelegate.currentIndex()==2){
+                return '#c7524f'
+            }
+            else if($ionicSlideBoxDelegate.currentIndex()==3){
+                return '#d1a545'
+            }
+        }
     });

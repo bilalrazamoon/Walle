@@ -1,16 +1,26 @@
 .card-block{
   position: relative;
-  width: 300px;
+  max-width: 300px;
   height: 150px;
   margin: auto;
   padding-top: 60px;
   padding-left: 15px;
   border-radius: 8px;
+  width: 100%;
+  min-width: 250px;
   .logo{
     position: absolute;
     top: 15px;
     left: 15px;
-    height: 40px;
+    font-size: 1.5em;
+    color: #ffffff;
+  }
+  .type{
+    position: absolute;
+    top: 36px;
+    left: 15px;
+    font-size: 1em;
+    color: #ffffff;
   }
   .number{
     margin: 5px 0;
@@ -28,7 +38,8 @@
     font-weight: 500;
     width: 35px;
     display: block;
-    text-transform: uppercase;;
+    text-transform: uppercase;
+    white-space: normal;
   }
   .valid{
     margin: 5px 0;

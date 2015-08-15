@@ -8,7 +8,8 @@
         </div>
         <div class="buttons buttons-right">
             <div class="right-buttons">
-                <button class="button button-icon icon ion-android-arrow-forward" ng-show="step==1" ng-click="next()"></button>
+                <button class="button button-icon icon ion-android-arrow-forward" ng-show="step==1"
+                        ng-click="next()"></button>
                 <button class="button button-icon icon ion-android-done" ng-show="step==2" ng-click="done()"></button>
             </div>
         </div>
@@ -18,35 +19,36 @@
         <div class="list-setting">
             <div ng-show="step==1">
                 <div class="item item-divider">Bank Option</div>
-                <label class="item item-input item-select">
+                <label class="item item-input">
                     <div class="input-label">
-                        Choose a Bank
+                        Bank Name
                     </div>
-                    <select ng-options="i for i in banks" ng-model="newCard.bank">
-                        <option>select bank</option>
-                    </select>
+                    <input type="text" ng-model="newCard.bank"/>
                 </label>
                 <label class="item item-input item-select">
                     <div class="input-label">
-                        Payment System
+                        Card Type
                     </div>
                     <select ng-options="i for i in type" ng-model="newCard.type">
                         <option>select payment system</option>
                     </select>
                 </label>
+
                 <div class="item item-divider">Choose card color</div>
                 <ion-slide-box on-slide-changed="slideHasChanged($index)">
                     <ion-slide>
                         <div class="color-block">
                             <div ng-repeat="c in colors | slice:0:10" ng-click="selectColor(c)">
-                                <span ng-style="{'background-color':c.val}" ng-class="{'active':isSelectedColor(c)}"></span>
+                                <span ng-style="{'background-color':c.val}"
+                                      ng-class="{'active':isSelectedColor(c)}"></span>
                             </div>
                         </div>
                     </ion-slide>
                     <ion-slide>
                         <div class="color-block">
                             <div ng-repeat="c in colors | slice:10:20" ng-click="selectColor(c)">
-                                <span ng-style="{'background-color':c.val}" ng-class="{'active':isSelectedColor(c)}"></span>
+                                <span ng-style="{'background-color':c.val}"
+                                      ng-class="{'active':isSelectedColor(c)}"></span>
                             </div>
                         </div>
                     </ion-slide>
@@ -60,18 +62,12 @@
                     </div>
                     <input type="text" ui-mask="9999 9999 9999 9999" ng-model="newCard.no"/>
                 </label>
-                <label class="item item-input" ng-init="newCard.valid={}">
+                <label class="item item-input">
                     <div class="input-label">
                         Cardholder name
                     </div>
                     <input type="text" ng-model="newCard.name"/>
                 </label>
-                <!--<label class="item item-input" ng-init="newCard.valid={}">
-                    <div class="input-label">
-                        Valid month
-                    </div>
-                    <input type="month" ng-model="newCard.valid.m"/>
-                </label>-->
                 <label class="item item-input">
                     <div class="input-label">
                         Valid year
@@ -85,15 +81,15 @@
                     <input type="number" size="2" ng-model="newCard.valid.m"/>
                 </label>
             </div>
-            <div class="card-block" style="background-color: {{getColors(newCard.color)}}">
-                <img class="logo" src="img/logos/citi.png"/>
-                <div class="number">{{newCard.no?newCard.no:'xxxxxxxxxxxxxxxx' | cardNo}}</div>
-                <span>Valid Thru</span>
-                <div class="valid">
-                    {{newCard.valid.m?newCard.valid.m:'xx'}}/{{newCard.valid.y?newCard.valid.y:'xx'}}
-                </div>
-                <div class="name">{{newCard.name?newCard.name:'Mr. Cardholder'}}</div>
-                <div class="circle"></div>
+            <div class="padding">
+                <card
+                        color="getColors(newCard.color)"
+                        type="newCard.type"
+                        name="newCard.name"
+                        valid="newCard.valid"
+                        bank="newCard.bank"
+                        number="newCard.no">
+                </card>
             </div>
         </div>
     </ion-content>
