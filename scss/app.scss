@@ -15,7 +15,7 @@ $dark:                            #444 !default;
 */
 
 // The path for our ionicons font files, relative to the built CSS in www/css
-$ionicons-font-path: "../lib/ionic/release/fonts" !default;
+$ionicons-font-path: "../fonts" !default;
 
 // Include all of Ionic
 @import "www/lib/ionic/scss/ionic";
@@ -25,7 +25,6 @@ $primaryColor: #2e2e3b;
 $primaryColorDark: #25252f;
 $primaryColorLight: #353543;
 $ancentColor: #8254ff;
-
 @import "util/fonts";
 body{
   font-family: Roboto,sans-serif;
@@ -41,4 +40,5 @@ body{
 "home",
 "cards",
 "about",
+"passcode",
 "profile";

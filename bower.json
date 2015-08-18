@@ -7,7 +7,6 @@
   "dependencies": {
     "angular-ui-mask": "~1.2.0",
     "ngCordova": "~0.1.17-alpha",
-    "kendo-ui-core": "~2015.2.727",
     "ionic": "~1.1.0"
   }
 }

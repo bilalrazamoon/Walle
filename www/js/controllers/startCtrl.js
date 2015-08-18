@@ -1,9 +1,5 @@
 angular.module('app')
     .controller('startCtrl', function ($scope, $state, $ionicSlideBoxDelegate, $ionicPlatform, $app) {
-        $ionicPlatform.ready(function () {
-            if(window.StatusBar)
-                StatusBar.backgroundColorByHexString($app.primaryColor);
-        });
         $scope.slideChanged = function (i) {
             console.log(i)
         };

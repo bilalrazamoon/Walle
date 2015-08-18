@@ -1,7 +1,7 @@
 angular.module('app', [
     'ionic',
     'ngCordova',
-    //'ui.mask',
+    'ui.mask',
     'kendo.directives'
 ])
     .constant('$app', {
@@ -9,7 +9,10 @@ angular.module('app', [
         version: "1.0",
         id: "com.example.walle",
         desc: "",
-        author: "Bilal Raza",
+        developer: {
+            name: "Bilal Raza",
+            email: "hafizbilal112@gmail.com"
+        },
         social: {
             "facebook": 'http://facebook.com/QasidahBurdahApp',
             "twitter": 'http://facebook.com/QasidahBurdahApp'
@@ -18,10 +21,17 @@ angular.module('app', [
         primaryColorDark: "#25252f",
         primaryColorLight: "#353543",
         ancentColor: "#8254ff",
-        shareTitle: 'App',
-        shareDesc: 'Download and share an App!'
+        feedback: {
+            subject: "Walle Android App",
+            message: "",
+            email: "hafizbilal112@gmail.com"
+        },
+        share: {
+            title: "Walle Android App",
+            desc: "Install app to save an manage transactions by respective card and see history by month or year"
+        }
     })
-    .run(['$ionicPlatform', '$rootScope', '$state', '$ionicHistory', '$app', function ($ionicPlatform, $rootScope, $state, $ionicHistory, $app) {
+    .run(['$ionicPlatform', '$rootScope', '$state', '$ionicHistory', '$app', '$cordovaSocialSharing', '$ionicLoading', '$message', function ($ionicPlatform, $rootScope, $state, $ionicHistory, $app, $cordovaSocialSharing, $ionicLoading, $message) {
         $rootScope.appName = $app.name;
         $rootScope.$ionicHistory = $ionicHistory;
         $ionicPlatform.ready(function () {
@@ -35,20 +45,33 @@ angular.module('app', [
                 StatusBar.backgroundColorByHexString($app.primaryColorDark);
             }
         });
+        $rootScope.passcode = false;
+        //"<i class='icon ion-'></i><p>Thanks for Sharing an app</p>"
         //stateChangeStartEvent
         $rootScope.$on('$stateChangeStart',
             function (event, toState, toParams, fromState, fromParams) {
-                if (toState.name == "app.home" && localStorage.getItem('start')==null) {
+                if (toState.name == "app.home" && localStorage.getItem('start') == null) {
                     event.preventDefault();
                     $state.go('start');
+                } else if (toState.name == 'app.home' && (localStorage.getItem('setting') != null && JSON.parse(localStorage.getItem('setting')).passcode != "") && !$rootScope.passcode) {
+                    event.preventDefault();
+                    $state.go('passcode', {mode: 'apply'});
                 }
             });
         //helperFunctions
         $rootScope.shareApp = function () {
-            $SocialSharing.share($app.shareDesc, $app.shareTitle, null, 'https://play.google.com/store/apps/details?id=' + $app.id)
+            $cordovaSocialSharing
+                .share($app.share.desc, $app.share.title, null, 'https://play.google.com/store/apps/details?id=' + $app.id)
+                .then(function () {
+                    $message.show("<i class='icon ion-thumbsup'></i><p>Thanks for Sharing an app</p>")
+                })
         };
         $rootScope.feedback = function () {
-            $SocialSharing.share($app.shareDesc, $app.shareTitle, null, 'https://play.google.com/store/apps/details?id=' + $app.id)
+            $cordovaSocialSharing
+                .shareViaEmail($app.feedback.message, $app.feedback.subject, $app.feedback.email)
+                .then(function (result) {
+                    $message.show("<i class='icon ion-thumbsup'></i><p>Thanks for giving a Feedback.</p>")
+                });
         };
         $rootScope.openLink = function (link) {
             window.open(link, "_system");
@@ -116,6 +139,11 @@ angular.module('app', [
                 url: "/setting",
                 templateUrl: "templates/setting.html",
                 controller: "settingCtrl"
+            })
+            .state('passcode', {
+                url: "/passcode/{mode}",
+                templateUrl: "templates/passcode.html",
+                controller: "passcodeCtrl"
             })
             .state('about', {
                 url: "/about",
