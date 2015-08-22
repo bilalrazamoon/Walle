@@ -9,7 +9,6 @@
         <hr/>
         <div class="no-items" ng-if="filteredTransactions.length==0" style="top: 220px;">
             <i class="icon ion-android-alert"></i>
-
             <p>No Transactions</p>
         </div>
         <div class="list-transactions">
@@ -20,10 +19,6 @@
                 <h2>{{t.cat.val}}</h2>
                 <span class="item-note" check-loss="t.price">{{t.price | currency}}</span>
                 <p>{{t.date | date:"MM/dd/yy 'at' h:mma"}}</p>
-              <ion-option-button class="button-assertive">
-                <i class="icon ion-trash-b"></i>
-              </ion-option-button>
-              <ion-option-button class="button-assertive">Edit</ion-option-button>
             </ion-item>
         </div>
     </ion-content>
