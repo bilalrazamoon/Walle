@@ -1,0 +1,22 @@
+<ion-view view-title="Feedback" class="feedback">
+  <ion-header-bar class="bar-stable">
+    <button class="button button-icon ion-android-arrow-back" ng-click="$ionicHistory.goBack()"></button>
+    <div class="image" ng-style="{'background-image':url('img/avatar.jpg')}"></div>
+  </ion-header-bar>
+  <ion-content has-bouncing="false">
+    <form class="card" name="feedbackForm" ng-submit="submit()">
+      <h2>Feedback</h2>
+
+      <div class="select" ng-click="popover.show($event)">
+        {{feedback.subject}} <i class="icon ion-android-arrow-dropdown"></i>
+      </div>
+      <ion-md-input placeholder="Email" hightlight-color="stable" ng-disabled="true" type="email"
+                    ng-model="feedback.email"></ion-md-input>
+      <ion-md-input placeholder="Name" hightlight-color="stable" type="text" ng-model="feedback.name"></ion-md-input>
+      <ion-md-textarea placeholder="Message" hightlight-color="stable" ng-model="feedback.message"></ion-md-textarea>
+      <div class="text-right">
+        <button type="submit" class="button button-light">Send</button>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

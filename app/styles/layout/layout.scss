@@ -1,0 +1,16 @@
+body{
+  font-family: Roboto,sans-serif;
+}
+.loader {
+  text-align: center;
+  width: 100%;
+  padding: 20px 0;
+}
+
+
+.item-toggle {
+  pointer-events: auto;
+}
+.toggle-small .handle{
+  background-color: #d0d2d2;
+}

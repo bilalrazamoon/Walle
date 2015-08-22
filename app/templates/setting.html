@@ -1,0 +1,42 @@
+<ion-view view-title="About Application" class="setting">
+  <ion-header-bar class="bar-stable">
+    <button class="button button-icon ion-android-arrow-back" ng-click="$ionicHistory.goBack()"></button>
+    <div class="title">Setting</div>
+  </ion-header-bar>
+  <ion-content class="black-ground">
+    <div class="list-setting">
+      <!--<div class="item item-divider">General</div>
+      <label class="item item-input item-select">
+          <div class="input-label">
+              Currency
+          </div>
+          <select ng-options="i for i in currencies" ng-model="setting.currency"></select>
+      </label>
+      <ion-toggle toggle-class="toggle-light">
+          Sync data
+      </ion-toggle>-->
+      <div class="item item-divider">Protection</div>
+      <label for="toggle" class="item item-toggle toggle-small" ng-click="changePasscode(flag)">
+        Passcode
+        <div class="toggle toggle-royal">
+          <input id="toggle" type="checkbox" ng-model="flag">
+
+          <div class="track">
+            <div class="handle"></div>
+          </div>
+        </div>
+      </label>
+      <ion-item class="item-icon-right" ng-show="flag" ng-click="setPasscode(flag)">
+        <h2>Set passcode</h2>
+
+        <p>To protect your details with passcode</p>
+      </ion-item>
+      <ion-item class="item-icon-right disabled" ng-hide="flag">
+        <h2>Set passcode</h2>
+
+        <p>To protect your details with passcode</p>
+      </ion-item>
+      <!--<div class="item item-divider">Share the App</div>-->
+    </div>
+  </ion-content>
+</ion-view>

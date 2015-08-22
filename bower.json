@@ -1,5 +1,6 @@
 {
-  "name": "myApp",
+  "name": "Walle",
+  "author": "Bilal Raza <hafizbilal112@gmail.com>",
   "private": "true",
   "dependencies": {
     "angular-ui-mask": "~1.2.0",
@@ -7,5 +8,8 @@
     "ionic": "~1.1.0",
     "moment": "~2.10.6",
     "angular-chart.js": "~0.7.3"
+  },
+  "resolutions": {
+    "angular": "1.4.3"
   }
 }

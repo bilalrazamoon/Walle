@@ -1,0 +1,36 @@
+<ion-view view-title="Passcode" class="passcode black-ground">
+  <ion-content has-bouncing="false">
+    <div class="pad-block">
+      <h2>Enter your Passcode</h2>
+
+      <div class="bullets">
+        <span ng-class="{'active':passcode.length>0}"></span>
+        <span ng-class="{'active':passcode.length>1}"></span>
+        <span ng-class="{'active':passcode.length>2}"></span>
+        <span ng-class="{'active':passcode.length>3}"></span>
+      </div>
+      <div class="pad">
+        <div class="pad-row">
+          <span ng-click="set(1)">1</span>
+          <span ng-click="set(2)">2</span>
+          <span ng-click="set(3)">3</span>
+        </div>
+        <div class="pad-row">
+          <span ng-click="set(4)">4</span>
+          <span ng-click="set(5)">5</span>
+          <span ng-click="set(6)">6</span>
+        </div>
+        <div class="pad-row">
+          <span ng-click="set(7)">7</span>
+          <span ng-click="set(8)">8</span>
+          <span ng-click="set(9)">9</span>
+        </div>
+        <div class="pad-row">
+          <span ng-click="set(',')">,</span>
+          <span ng-click="set('0')">0</span>
+          <span ng-click="clear()">C</span>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

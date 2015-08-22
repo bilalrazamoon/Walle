@@ -1,0 +1,44 @@
+<ion-view class="slideBox" ng-style="{'background-color':getColor()}">
+  <div class="slides">
+    <ion-slide-box on-slide-changed="slideChanged(index)" show-pager="true">
+      <ion-slide>
+        <div class="content-block">
+          <h3>Transaction</h3>
+
+          <div class="logo"><img src="images/slider/Money.png"></div>
+          <p>Save your transactions against your respective card.</p>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="content-block">
+          <h3>Cards</h3>
+
+          <div class="logo"><img src="images/slider/visa-card-icon.png"></div>
+          <p>Create, update and manage your card to save transactions detail on it.</p>
+        </div>
+      </ion-slide>
+      <ion-slide>
+        <div class="content-block">
+          <h3>History</h3>
+
+          <div class="logo"><img src="images/slider/market-flow-icon.png"></div>
+          <p>See History of transactions under by Month and Year</p>
+        </div>
+      </ion-slide>
+      <ion-slide on-drag-left="onDragLeft()">
+        <div class="content-block">
+          <h3>Secure</h3>
+
+          <div class="logo"><img src="images/slider/keys-icon.png"></div>
+          <p>Protect and Secure your information by passcode.</p>
+        </div>
+      </ion-slide>
+    </ion-slide-box>
+  </div>
+  <ion-footer-bar class="bar-light">
+    <button ng-if="isPre()" class="button button-clear button-icon" ng-click="previous()">Previous</button>
+    <button ng-if="!isPre()" class="button button-clear button-icon" ng-click="done()">Skip</button>
+    <button ng-if="isNext()" class="button button-clear button-icon" ng-click="next()">Next</button>
+    <button ng-if="!isNext()" class="button button-clear button-icon" ng-click="done()">Done</button>
+  </ion-footer-bar>
+</ion-view>

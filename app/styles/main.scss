@@ -1,0 +1,40 @@
+/************************************
+ *
+ *  Main Styles to compile. Here only @imports!
+ *
+ ************************************/
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../fonts" !default;
+
+@import "_variables";
+@import "_fonts";
+
+/**
+ * LAYOUT
+ */
+
+@import "layout/layout",
+"layout/list",
+"layout/card",
+"layout/toolbar",
+"layout/backfrop",
+"layout/popover",
+"layout/popup",
+"layout/calendar",
+"layout/fab";
+
+/**
+ * VIEWS
+ */
+
+@import
+"slider",
+"drawer",
+"add-card",
+"add-transaction",
+"home",
+"cards",
+"about",
+"passcode",
+"profile";
