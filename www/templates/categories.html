@@ -1,8 +1,0 @@
-<ion-list>
-    <ion-item class="item-cat" ng-repeat="c in categories" ng-class="{'active':IsCat(c.id)}" ng-click="selectCat(c.id)">
-        <div class="cat" cat-color="c.color">
-            <i class="icon " ng-class="getClass(c)"></i>
-        </div>
-        {{c.val}}
-    </ion-item>
-</ion-list>
