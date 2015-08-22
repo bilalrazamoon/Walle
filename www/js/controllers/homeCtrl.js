@@ -86,6 +86,33 @@ angular.module('app')
                 obj[c.icon]=true;
             return obj
         };
+        var popup = null;
+        var index= null;
+        $scope.more = function (i) {
+            popup = $ionicPopup.show({
+                templateUrl: 'templates/transaction-options.html',
+                title: 'Options',
+                scope: $scope,
+                buttons: [
+                    {text:"hello"}
+                ]
+            });
+            $timeout(function () {
+                angular.element(document.querySelector(".popup-container")).click(function () {
+                    popup.close();
+                    index=null;
+                });
+                angular.element(document.querySelector(".popup")).click(function (e) {
+                    e.stopPropagation()
+                });
+            })
+        };
+        $scope.editTransaction= function () {
+
+        };
+        $scope.deleteTransaction= function () {
+
+        };
         /*$scope.deleteCard= function (e, t) {
             //console.log(angular.element(e.target).parent().find('.item-options').hasClass('invisible'));
             /!*if((angular.element(e.target).parent().css('transform')!='none')){
