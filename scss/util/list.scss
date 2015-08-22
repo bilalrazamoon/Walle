@@ -1,8 +1,9 @@
 .list-transactions {
   .item {
-    background-color: $primaryColorLight;
-    padding: 0;
     border: none;
+    padding: 16px;
+    padding-left: 74px;
+    background-color: $primaryColorLight;
     &.activated, &.active {
       background-color: rgba(255,255,255,0.1);
     }
@@ -10,6 +11,20 @@
       padding: 16px;
       font-weight: 400;
       color: $ancentColor;
+    }
+    h2 {
+      color: #fff;
+      font-weight: 400;
+      font-size: 1.2em;
+    }
+    .item-note {
+      font-weight: 500;
+      font-size: 1em;
+    }
+    p{
+      color: #dddddd;
+      margin: 2px 0;
+      font-size: 0.8em;
     }
     .cat {
       border-radius: 50%;
@@ -30,28 +45,14 @@
         color: #fff;
       }
     }
-    .item-content {
+    /*.item-content {
       padding: 16px;
       padding-left: 74px;
       background-color: $primaryColorLight;
       &.activated, &.active {
         background-color: rgba(255,255,255,0.1);
       }
-      h2 {
-        color: #fff;
-        font-weight: 400;
-        font-size: 1.2em;
-      }
-      .item-note {
-        font-weight: 500;
-        font-size: 1em;
-      }
-      p{
-        color: #dddddd;
-        margin: 2px 0;
-        font-size: 0.8em;
-      }
-    }
+    }*/
   }
 }
 
@@ -272,13 +273,13 @@ hr{
   height: 100px;
   .icon{
     color: #ffffff;
-    font-size: 3em;
+    font-size: 4em;
     margin: 0.2em auto;
     display: block;
   }
   p{
     color: #ffffff;
-    font-size: 1.5em;
+    font-size: 2em;
   }
 }
 
