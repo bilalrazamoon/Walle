@@ -13,7 +13,7 @@ angular.module('app')
             $scope.step = 2;
         };
         $scope.type = ["Visa", "MasterCard", "American Express", "Diners Club", "Discover", "JCB", "UnionPay", "Maestro", "Forbrugsforeningen", "Dankort"];
-        $scope.newCard = {color:$scope.colors[0].name,valid:{y:"",m:""},type:"",bank:"",no:"",name:""};
+        $scope.newCard = {color: $scope.colors[0].name, valid: {y: "", m: ""}, type: "", bank: "", no: "", name: ""};
         $scope.selectColor = function (c) {
             $scope.newCard.color = c.name;
         };
@@ -39,47 +39,54 @@ angular.module('app')
             }
             $cards.set($scope.newCard);
             $scope.cards = $cards.get();
-            $scope.newCard = {color:$scope.colors[0].name,valid:{y:"",m:""},type:"",bank:"",no:"",name:""};
+            $scope.newCard = {
+                color: $scope.colors[0].name,
+                valid: {y: "", m: ""},
+                type: "",
+                bank: "",
+                no: "",
+                name: ""
+            };
             $scope.step = 1;
             $ionicSlideBoxDelegate.update();
             $scope.modal.remove();
         };
-        var popup =
-            $scope.more = function () {
-                popup = $ionicPopup.show({
-                    templateUrl: 'templates/card-options.html',
-                    title: 'Options',
-                    scope: $scope,
-                    buttons: []
+        var popup = null;
+        $scope.more = function () {
+            popup = $ionicPopup.show({
+                templateUrl: 'templates/card-options.html',
+                title: 'Options',
+                scope: $scope,
+                buttons: []
+            });
+            $timeout(function () {
+                angular.element(document.querySelector(".popup-container")).click(function () {
+                    popup.close();
                 });
-                $timeout(function () {
-                    angular.element(document.querySelector(".popup-container")).click(function () {
-                        popup.close();
-                    });
-                    angular.element(document.querySelector(".popup")).click(function (e) {
-                        e.stopPropagation()
-                    });
-                })
-            };
+                angular.element(document.querySelector(".popup")).click(function (e) {
+                    e.stopPropagation()
+                });
+            })
+        };
         $scope.deleteCard = function () {
             var no = $scope.cards[$ionicSlideBoxDelegate.currentIndex()].no;
             $cards.remove(no);
-            $scope.cards=$cards.get();
+            $scope.cards = $cards.get();
             $ionicSlideBoxDelegate.update();
             popup.close();
         };
         var transactions = $transactions.get();
-        if($scope.cards.length>0){
-          var currentNo=$scope.cards[0].no;
-          $scope.filteredTransactions=transactions.filter(function (v) {
-              return v.no==currentNo
-          });
+        if ($scope.cards.length > 0) {
+            var currentNo = $scope.cards[0].no;
+            $scope.filteredTransactions = transactions.filter(function (v) {
+                return v.no == currentNo
+            });
         }
 
-        $scope.cardChanged= function (i) {
+        $scope.cardChanged = function (i) {
             var no = $scope.cards[i].no;
-            $scope.filteredTransactions=transactions.filter(function (v) {
-                return v.no==no
+            $scope.filteredTransactions = transactions.filter(function (v) {
+                return v.no == no
             })
         }
     });
