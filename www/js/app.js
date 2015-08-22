@@ -46,8 +46,6 @@ angular.module('app', [
             }
         });
         $rootScope.passcode = false;
-        //"<i class='icon ion-'></i><p>Thanks for Sharing an app</p>"
-        //stateChangeStartEvent
         $rootScope.$on('$stateChangeStart',
             function (event, toState, toParams, fromState, fromParams) {
                 if (toState.name == "app.home" && localStorage.getItem('start') == null) {
