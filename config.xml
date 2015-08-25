@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <widget id="com.bilalraza.walle" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>Walle</name>
-  <description>&#xD;
-    Add your desription here&#xD;
+  <description>
+    Save your transactions against your respective card. Create, update and manage cards to save transactions detail on it. See History of transactions under by Week and Month and Protect and Secure your information by passcode.
   </description>
-  <author email="hafizbilal112@gmail.com">&#xD;
-    Bilal Raza&#xD;
+  <author email="hafizbilal112@gmail.com">
+    Bilal Raza
   </author>
   <content src="index.html"/>
   <access origin="*"/>
