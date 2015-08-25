@@ -1,0 +1,23 @@
+<ion-view>
+  <ion-nav-title ng-click="popover.show($event)">
+    History {{'('+option+')'}} <i class='icon ion-android-arrow-dropdown'></i>
+  </ion-nav-title>
+  <ion-content has-bouncing="false" class="black-ground">
+    <div class="graphs" ng-if="transactions.length!=0">
+      <canvas class="chart chart-bar"
+              data="graph.data"
+              series="graph.series"
+              labels="graph.labels"
+              colours="graph.colours"
+              options="graph.options"></canvas>
+    </div>
+    <ion-list class="list-transactions" delegate-handle="list-transactions">
+      <transaction ng-repeat="t in transactions" transaction="t"></transaction>
+    </ion-list>
+    <div class="no-items" ng-if="transactions.length==0">
+      <i class="icon ion-android-alert"></i>
+      <p>No Transactions</p>
+    </div>
+  </ion-content>
+
+</ion-view>

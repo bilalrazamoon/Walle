@@ -1,5 +1,5 @@
 angular.module('Walle')
-    .factory('$transactions', function ($categories) {
+    .factory('$transactions', function ($categories, $colors) {
         return {
             get: function (id) {
                 if (id) {
@@ -26,7 +26,8 @@ angular.module('Walle')
                     else {
                         transactions = JSON.parse(localStorage.getItem('transactions'));
                         transactions=transactions.map(function (v) {
-                            v.cat=$categories.get(v.cat);
+                            v.cat=angular.copy($categories.get(v.cat));
+                            v.cat.color=angular.copy($colors.get(v.cat.color));
                             return v
                         })
                     }

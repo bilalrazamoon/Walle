@@ -17,7 +17,13 @@
       font-weight: 400;
       font-size: 1.2em;
     }
-    .item-note {
+    .price {
+       position: absolute;
+      right: 18px;
+      top: 0;
+      bottom: 0;
+      margin: auto;
+      display: inline-table;
       font-weight: 500;
       font-size: 1em;
     }

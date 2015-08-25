@@ -6,6 +6,17 @@
   </ion-header-bar>
   <ion-content class="black-ground">
     <div class="list-setting">
+      <div class="item item-icon-left item-toggle">
+        Expense/Income
+        <i class="icon ion-stats-bars"></i>
+        <div class="sign-toggle">
+          <div class="active" ng-class="{'plus':isSign('+'),'minus':isSign('-')}">
+            <i ng-class="{'ion-android-add':isSign('+'),'ion-android-remove':isSign('-')}"></i>
+          </div>
+          <i class="icon ion-android-add" ng-click="setSign('+')"></i>
+          <i class="icon ion-android-remove" ng-click="setSign('-')"></i>
+        </div>
+      </div>
       <label class="item item-icon-left item-input">
         Amount
         <i class="icon ion-cash"></i>

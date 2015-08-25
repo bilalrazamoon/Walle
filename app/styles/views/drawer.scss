@@ -1,0 +1,103 @@
+.black-ground{
+  background-color: $primaryColorLight;
+}
+.backDrop {
+  transform: translate3d(0px, 0px, 0px);
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+  opacity: 0;
+  display: none;
+}
+
+drawer{
+  display: block;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 270px;
+  height: 100%;
+  z-index: 100;
+  background: #ffffff;
+  &.animate {
+    -webkit-transition: 0.4s all ease-in-out;
+    transition: 0.4s all ease-in-out;
+  }
+  &.left {
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+    box-shadow: 1px 0px 10px rgba(0,0,0,0.3);
+  }
+  &.right {
+    right: 0;
+    top: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+    box-shadow: -1px 0px 10px rgba(0,0,0,0.3);
+  }
+}
+.banner{
+  height: 120px;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  .profile{
+    box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+    border: 2px solid #fff;
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+}
+.drawer {
+  box-shadow: none;
+  .has-header{
+    //top: 120px;
+    top: 0;
+  }
+  .scroll-content {
+    background-color: #ffffff;
+    .list {
+      background-color: #ffffff;
+      .item {
+        font-weight: 500;
+        font-size: 16px;
+        opacity: 0.87;
+        color: #000;
+        border: none;
+        .icon {
+          font-size: 20px;
+          opacity: 0.54;
+          color: #000;
+        }
+        .item-content{
+          &.activated,
+          &.active{
+            background-color: #E8E8E8;
+          }
+        }
+        &.activated,
+        &.active{
+          background-color: #E8E8E8;
+        }
+      }
+      hr {
+        background-color: #aaa;
+        border: none;
+        height: 1px;
+        margin: 10px 0;
+      }
+    }
+  }
+}

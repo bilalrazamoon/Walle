@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "author": "Bilal Raza <hafizbilal112@gmail.com>",
   "description": "",
-  "dependencies": {},
+  "dependencies": {
+    "gulp-csslint": "^0.2.0"
+  },
   "devDependencies": {
     "beepbeep": "^1.2.0",
     "connect-livereload": "^0.5.2",
@@ -46,5 +48,9 @@
   },
   "scripts": {
     "gulp": "./node_modules/.bin/gulp"
-  }
+  },
+  "cordovaPlugins": [],
+  "cordovaPlatforms": [
+    "android"
+  ]
 }

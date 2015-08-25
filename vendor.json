@@ -1,4 +1,5 @@
 [
+  "bower_components/jquery/dist/jquery.js",
   "bower_components/angular/angular.js",
   "bower_components/angular-resource/angular-resource.js",
   "bower_components/angular-animate/angular-animate.js",
@@ -7,7 +8,6 @@
   "bower_components/ionic/release/js/ionic.js",
   "bower_components/ionic/release/js/ionic-angular.js",
   "bower_components/angular-ui-mask/dist/mask.js",
-  "bower_components/jquery/dist/jquery.js",
   "bower_components/moment/moment.js",
   "bower_components/Chart.js/Chart.js",
   "bower_components/angular-chart.js/dist/angular-chart.js",

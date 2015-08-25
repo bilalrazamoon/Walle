@@ -4,19 +4,10 @@
   </ion-nav-title>-->
   <ion-content has-bouncing="false" class="black-ground" fab-scroll-container>
     <ion-list class="list-transactions" delegate-handle="list-transactions">
-      <ion-item class="item" ng-repeat="t in transactions | filter:date" ng-click="" on-hold="more()">
-        <div class="cat" cat-color="t.cat.color">
-          <i class="icon" ng-class="t.cat.icon"></i>
-        </div>
-        <h2>{{t.cat.val}}</h2>
-        <span class="item-note" check-loss="t.price">{{t.price | currency}}</span>
-
-        <p>{{t.date | date:"MM/dd/yy 'at' h:mma"}}</p>
-      </ion-item>
+      <transaction ng-repeat="t in transactions" transaction="t"  ng-click="" on-hold="more($index)"></transaction>
     </ion-list>
     <div class="no-items" ng-if="transactions.length==0">
       <i class="icon ion-android-alert"></i>
-
       <p>No Transactions</p>
     </div>
   </ion-content>

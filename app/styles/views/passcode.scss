@@ -1,0 +1,102 @@
+.passcode {
+  .pad-block {
+    min-width: 200px;
+    width: 100%;
+    max-width: 400px;
+    margin: auto;
+    h2 {
+      text-align: center;
+      color: #ffffff;
+      font-weight: 400;
+      font-size: 2em;
+      margin: 1.5em auto;
+      @media (max-width: 350px) {
+        font-size: 1.4em;
+        margin: 1em auto;
+      }
+    }
+    .bullets {
+      text-align: center;
+      span {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background-color: $primaryColor;
+        margin: 0.8em;
+        position: relative;
+        @media (max-width: 350px) {
+          width: 30px;
+          height: 30px;
+          margin: 0.4em;
+        }
+        &:after {
+          content: '';
+          position: absolute;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          top: 0;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          margin: auto;
+          @media (max-width: 350px) {
+            width: 15px;
+            height: 15px;
+          }
+        }
+        &.active{
+          &:nth-child(1):after {
+            background-color: #e91e63;
+          }
+          &:nth-child(2):after {
+            background-color: #3f51b5;
+          }
+          &:nth-child(3):after {
+            background-color: #2196f3;
+          }
+          &:nth-child(4):after {
+            background-color: #00bcd4;
+          }
+      }
+    }
+  }
+  .pad {
+    //position: absolute;
+    //bottom: 6em;
+    //left: 0;
+    //right: 0;
+    //margin: auto;
+    .pad-row {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      span {
+        border-radius: 50%;
+        border: 2px solid rgba(255,255,255,0.4);
+        width: 60px;
+        height: 60px;
+        font-size: 1.8em;
+        font-weight: 300;
+        color: #ffffff;
+        margin: 0.6em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @media (max-width: 350px) {
+          width: 50px;
+          height: 50px;
+          font-size: 1.5em;
+          margin: 0.4em;
+          border: 1px solid rgba(255,255,255,0.4);
+        }
+        &.activated {
+          background-color: rgba(255, 255, 255, 0.1);
+        }
+      }
+    }
+  }
+}
+
+}

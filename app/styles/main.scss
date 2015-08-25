@@ -4,17 +4,16 @@
  *
  ************************************/
 
-// The path for our ionicons font files, relative to the built CSS in www/css
-$ionicons-font-path: "../fonts" !default;
-
 @import "_variables";
 @import "_fonts";
+@import "../../bower_components/ionic/scss/ionic";
 
 /**
  * LAYOUT
  */
 
-@import "layout/layout",
+@import
+"layout/layout",
 "layout/list",
 "layout/card",
 "layout/toolbar",
@@ -29,12 +28,12 @@ $ionicons-font-path: "../fonts" !default;
  */
 
 @import
-"slider",
-"drawer",
-"add-card",
-"add-transaction",
-"home",
-"cards",
-"about",
-"passcode",
-"profile";
+"views/slider",
+"views/drawer",
+"views/add-card",
+"views/add-transaction",
+"views/home",
+"views/cards",
+"views/about",
+"views/passcode",
+"views/profile";
