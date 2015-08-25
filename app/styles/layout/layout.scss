@@ -71,10 +71,12 @@ body {
   }
 }
 
-
-.chart-container{
-  max-width: 500px;
-  max-height: 250px;
-  display: flex;
-  margin: auto;
+.graphs{
+  padding-top: 15px;
+  .chart-container{
+    max-width: 500px;
+    max-height: 250px;
+    display: flex;
+    margin: auto;
+  }
 }
