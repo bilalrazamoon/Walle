@@ -12,10 +12,11 @@
               options="graph.options"></canvas>
     </div>
     <ion-list class="list-transactions" delegate-handle="list-transactions">
-      <transaction ng-repeat="t in transactions" transaction="t"></transaction>
+      <transaction ng-repeat="t in transactions | orderBy:'-date'" transaction="t"></transaction>
     </ion-list>
     <div class="no-items" ng-if="transactions.length==0">
       <i class="icon ion-android-alert"></i>
+
       <p>No Transactions</p>
     </div>
   </ion-content>

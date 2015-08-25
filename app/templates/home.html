@@ -6,8 +6,8 @@
     <button class="button button-icon ion-android-calendar" ui-sref="app.calendar"></button>
   </ion-nav-buttons>
   <ion-content has-bouncing="false" class="black-ground" fab-scroll-container>
-    <ion-list class="list-transactions" delegate-handle="list-transactions">
-      <transaction ng-repeat="t in transactions" transaction="t"  ng-click="" on-hold="more($index)"></transaction>
+    <ion-list class="list-transactions">
+      <transaction ng-repeat="t in transactions | orderBy:'-date'" transaction="t"  ng-click="" on-hold="more($index)"></transaction>
     </ion-list>
     <div class="no-items" ng-if="transactions.length==0">
       <i class="icon ion-android-alert"></i>

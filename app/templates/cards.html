@@ -13,7 +13,7 @@
       </ion-slide>
     </ion-slide-box>
     <div class="list-transactions" ng-if="cards.length!=0">
-      <transaction ng-repeat="t in filteredTransactions | filter:date" transaction="t"  ng-click="" on-hold="more($index)"></transaction>
+      <transaction ng-repeat="t in filteredTransactions | orderBy:'-date'" transaction="t"  ng-click="" on-hold="more($index)"></transaction>
     </div>
   </ion-content>
   <fab ng-click="addCard()">

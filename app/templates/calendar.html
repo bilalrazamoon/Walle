@@ -8,20 +8,10 @@
     <hr/>
     <div class="no-items" ng-if="filteredTransactions.length==0" style="top: 220px;">
       <i class="icon ion-android-alert"></i>
-
       <p>No Transactions</p>
     </div>
     <div class="list-transactions">
-      <transaction ng-repeat="t in filteredTransactions" transaction="t"  ng-click="" on-hold="more($index)"></transaction>
-      <!--<ion-item class="item" ng-repeat="t in filteredTransactions | filter:date">
-        <div class="cat" cat-color="t.cat.color">
-          <i class="icon" ng-class="t.cat.icon"></i>
-        </div>
-        <h2>{{t.cat.val}}</h2>
-        <span class="item-note" check-loss="t.price">{{t.price | currency}}</span>
-
-        <p>{{t.date | date:"MM/dd/yy 'at' h:mma"}}</p>
-      </ion-item>-->
+      <transaction ng-repeat="t in filteredTransactions | orderBy:'-date'" transaction="t"  ng-click="" on-hold="more($index)"></transaction>
     </div>
   </ion-content>
 </ion-view>
