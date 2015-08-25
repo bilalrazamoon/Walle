@@ -8,15 +8,14 @@ angular.module('Walle', [
   .constant('$app', {
     name: "Walle",
     version: "1.0",
-    id: "com.example.walle",
-    desc: "",
-    developer: {
+    id: "com.bilalraza.walle",
+    desc: "Save your transactions against your respective card. Create, update and manage cards to save transactions detail on it. See History of transactions under by Week and Month and Protect and Secure your information by passcode.",
+    author: {
       name: "Bilal Raza",
       email: "hafizbilal112@gmail.com"
     },
     social: {
-      "facebook": 'http://facebook.com/QasidahBurdahApp',
-      "twitter": 'http://facebook.com/QasidahBurdahApp'
+
     },
     primaryColor: "#2e2e3b",
     primaryColorDark: "#25252f",
@@ -43,7 +42,6 @@ angular.module('Walle', [
       }
       if (window.StatusBar) {
         StatusBar.styleDefault();
-        StatusBar.backgroundColorByHexString($app.primaryColorDark);
       }
     });
     $rootScope.passcode = false;
