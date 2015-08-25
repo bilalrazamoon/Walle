@@ -18,7 +18,7 @@ angular.module('Walle')
     $scope.isSelectedOption = function (o) {
       return $scope.option == o;
     };
-    var template = '<ion-popover-view style="height: 130px;"><ion-content>' +
+    var template = '<ion-popover-view style="height: 116px;"><ion-content>' +
       '<ion-item ng-click="selectOption(o)" ng-repeat="o in options" ng-class="{\'active\':isSelectedOption(o)}">History ({{o}})</ion-item>' +
       '</ion-content></ion-popover-view>';
     $scope.popover = $ionicPopover.fromTemplate(template, {
